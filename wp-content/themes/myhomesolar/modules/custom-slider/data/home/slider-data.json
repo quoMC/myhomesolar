@@ -1,0 +1,26 @@
+{
+    "0" : {
+        "slide_content" : "<h3>The answer to soaring energy prices?</h3><p>With skyrocketing energy costs, solar energy presents a sustainable and savvy alternative. Everyone is feeling the pinch of rising electricity bills so it's time to consider how solar panels can bring not just environmental benefits, but significant financial ones too.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/carousel-img.jpg"
+    },
+    "1" : {
+        "slide_content" : "<h3>Tackle Energy Inflation Head-On</h3><p>With recent inflation, energy costs have hit an all-time high in the UK, leading to a 30% increase in many customers' bills over the last year alone. Investing in solar power enables you to cap these escalating costs by generating your own electricity, free from the influence of market prices.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/tackle-energy.jpg"
+    },
+    "2" : {
+        "slide_content" : "<h3>Maximise Savings</h3><p>By generating your own electricity, you can save up to 70% on your energy bills. Over time, these savings can add up to a significant sum, offsetting the initial installation cost of your solar panel system and making it a worthy long-term investment.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/maximise-savings.jpg"
+    },
+    "3" : {
+        "slide_content" : "<h3>Sell Excess Power Back</h3><p>When your solar panels generate more electricity than you need, you can sell that excess power back to the grid. This can earn you additional income, helping to further reduce your energy expenditure.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/excess-power.jpg"
+    },
+    "4" : {
+        "slide_content" : "<h3>Electric Vehicle Charging</h3><p>If you own an electric vehicle, charging it can be a substantial addition to your electricity bill. With solar panels, you can power your vehicle with the electricity you generate, further increasing your savings.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/ev-charging.jpg"
+    },
+    "5" : {
+        "slide_content" : "<h3>Gain Energy Independence</h3><p>By producing your own power, you become less reliant on energy suppliers and immune to their price increases. This provides a sense of security and predictability when it comes to managing your energy costs.</p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/06/energy-idependence.jpg"
+    }
+}

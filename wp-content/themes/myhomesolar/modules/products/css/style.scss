@@ -1,0 +1,720 @@
+
+$grey-bg: #F1F1F1;
+
+@mixin iconFont($icon) {
+    content: $icon;
+    font: {
+        family: "Font Awesome 6 Free";
+        weight: 900;
+    }
+    color: var(--accent);
+}
+
+%contentButton {
+    width: fit-content;
+    display: block;
+    padding: 15px 20px;
+    background-color: var(--accent);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    &:hover {
+        background-color: darken(#94C11F,10%);
+        color: #ffffff;
+    }
+}
+
+.site-content {
+    flex-wrap: wrap;
+}
+
+/** show fancybox nav over site nav */
+
+.fancybox__container {
+    z-index: 10001!important;
+}
+
+main,
+.contentBlocks,
+.downloadBlocks,
+.galleryBlocks {
+    width: 100%;
+    @media only screen and (min-width:1600px){
+        max-width: 1600px;
+        margin: auto;
+    }
+}
+
+/** Header Banner */
+
+.productPageHeader {
+    width: 100%;
+    height: 450px;
+    background: {
+        position: center;
+        size: cover;
+    }
+}
+
+/** Hero Section */
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.manufacturerSection {
+    position: relative;
+    &-logo {
+        width: 300px;
+        height: 150px;
+        position: absolute;
+        top: -4.5rem;
+    }
+    &-intro {
+        padding: 6rem 1.5rem 1.5rem;
+    }
+}
+
+.heroSection {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    @media only screen and (min-width:768px){
+        padding: 3rem 3rem 1.5rem;
+    }
+    & > * {
+        flex: 100%;
+        @media only screen and (min-width:768px){
+            flex: 50%;
+        }
+    }
+    .heroSectionContent {
+        display: grid;
+        padding-top: 20px;
+        @media only screen and (min-width:769px){
+            padding-top: 80px;
+        }
+        &-toggle {
+            display: block;
+            margin: 1rem 0;
+            order: 3;
+            text-decoration: none;
+            color: var(--accent);
+            &:active,
+            &:hover {
+                color: var(--accent);
+            }
+            &:before {
+                content: "Read More"
+            }
+            &.active {
+                &:before {
+                    content: "Read Less"
+                }
+                & ~ .heroSectionContent-body {
+                    max-height: fit-content;
+                }
+            }
+        }
+        &-body {
+            height: auto;
+            max-height: 100px;
+            overflow-y: hidden;
+            position: relative;
+        }
+        &-tabs {
+            &-tabList {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                border: {
+                    top-width: 1px;
+                    bottom-width: 1px;
+                    style: solid;
+                    color: var(--contrast-3);
+                }
+            }
+            &-tab {
+                flex: calc( 100 / 3);
+                padding: 8px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                color: var(--contrast-3);
+                cursor: pointer;
+                transition: color .35s;
+                &:nth-of-type(2){
+                    border: {
+                        right-width: 1px;
+                        left-width: 1px;
+                        style: solid;
+                        color: var(--contrast-3);
+                    }
+                }
+                &.active,
+                &:hover {
+                    color: var(--contrast);
+                }
+                &__benefits {
+                    &:before {
+                        @include iconFont("\f5ba");
+                        margin-right: .5rem;
+                    }
+                }
+                &__features {
+                    &:before {
+                        @include iconFont("\f0ae");
+                        margin-right: .5rem;
+                    }
+                }
+                &__installation {
+                    &:before {
+                        @include iconFont("\f807");
+                        margin-right: .5rem;
+                    }
+                }
+            }
+            &-tabContent {
+                display: none;
+                padding: 20px 0;
+                ul {
+                    margin-left: 0;
+                    list-style-type: none;
+                    li {
+                        display: flex;
+                        margin-bottom: 1rem;
+                        &:before {
+                            @include iconFont("\f058");
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+/** Breadcrumbs Section */
+
+.productBreadcrumbs {
+    width: 100%;
+    padding: 5px 1.5rem;
+    background-color: $grey-bg;
+    @media only screen and (min-width:769px){
+        padding: {
+            right: 3rem;
+            left: 3rem;
+        }
+    }
+    @media only screen and (min-width:1600px){
+        padding: {
+            right: 0;
+            left: 0;
+        }
+    }
+    div {
+        max-width: 100%;
+        margin: auto;
+        font-size: 14px;
+        @media only screen and (min-width:1600px){
+            max-width: 1600px;
+        }
+        a {
+            text-decoration: none;
+
+        }
+    }
+}
+
+/** Series Section */
+
+.seriesBlocks {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 3px solid $grey-bg;
+    &-seriesBlock {
+        flex: 100%;
+        & ~ .seriesBlocks-seriesBlock {
+            margin-top: 1.5rem;
+        }
+        &:nth-of-type(even){
+            .seriesBlocks-seriesBlock-seriesOverview {
+                background: {
+                    image: url('/wp-content/uploads/2023/07/general-grey-bg-right.jpg');
+                    position: right bottom;
+                }
+                &-imageBlock {
+                    @media only screen and (min-width:640px){
+                        order: 1;
+                    }
+                }
+                &-contentBlock {
+                    @media only screen and (min-width:640px){
+                        order: 2;
+                    }
+                }
+            }
+        }
+        &-seriesOverview {
+            padding: 1.5rem 0;
+            background: {
+                color: $grey-bg;
+                image: url('/wp-content/uploads/2023/06/general-grey-bg.jpg');
+                position: left bottom;
+                repeat: no-repeat;
+                size: 80vh;
+            }
+            & > .inner {
+                max-width: 1600px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                & > * {
+                    flex: 100%;
+                    padding: 1.5rem;
+                    @media only screen and (min-width:640px){
+                        flex: calc( 100% / 3 );
+                    }
+                }
+            }
+            &-contentBlock {
+                padding: 0;
+                font-weight: 22px;
+                h3 {
+                    margin-bottom: 10px;
+                }
+                &:first-of-type {
+                    p {
+                        &:first-of-type {
+                            font-size: 21px;
+                        }
+                    }
+                }
+                ul {
+                    margin-left: 0;
+                    list-style-type: none;
+                    li {
+                        display: flex;
+                        margin-bottom: 1rem;
+                        font-weight: bold;
+                        &:before {
+                            @include iconFont("\f058");
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+            &-imageBlock {
+                display: flex;
+                justify-content: center;
+                order: 1;
+                @media only screen and (min-width:640px){
+                    order: 3;
+                }
+            }
+        }
+        &-seriesVariants {
+            max-width: 1600px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--base-3);
+            &-seriesVariant {
+                flex: 100%;
+                padding: 1.5rem;
+                @media only screen and (min-width:769px){
+                    flex: 50%;
+                    padding: 3rem 1.5rem;
+                }
+                &-button {
+                    @extend %contentButton;
+                }
+            }
+        }
+    }
+}
+
+/** Series Spec Section */
+
+.seriesSpec
+{
+    &-specPanels {
+        width: 100%;
+        padding: 1.5rem;
+        background: {
+            image: url('/wp-content/uploads/2023/07/circles-bg-640.jpg');
+            position: right -5.5rem bottom -11rem;
+            repeat: no-repeat;
+            size: 60vh;
+        }
+        @media only screen and (min-width:769px){
+            padding: 3rem 1.5rem;
+        }
+        h3,p {
+            text-align: center;
+        }
+        &-outer,
+        &-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        &-outer {
+            width: 100%;
+            max-width: 1600px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        &-content {
+            @media only screen and (min-width:769px){
+                max-width: 65%;
+                margin: auto;
+            }
+        }
+        &-specPanel {
+            flex: 100%;
+            margin-bottom: 1rem;
+            padding: .5rem;
+            background-color: var(--base-3);
+            border: 1px solid $grey-bg;
+            box-shadow: 0 0 5px rgba(#000000,.25);
+            @media only screen and (min-width:769px){
+                flex: calc( (100% / 3) - 2rem );
+                margin: 1rem;
+
+            }
+            header {
+                padding: .5rem;
+                background-color: var(--accent);
+                text-align: center;
+                color: var(--contrast);
+                h4 {
+                    margin: 0;
+                }
+            }
+            main {
+                padding: 1.5rem;
+                ul {
+                    margin-left: 0;
+                    list-style-type: none;
+                    li {
+                        margin-bottom: 1rem;
+                        &:before {
+                            @include iconFont("\f058");
+                            margin: 1rem 1rem 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-specTable
+    {
+        width: 100%;
+        padding: 3rem 0;
+        @media only screen and (max-width:1600px){
+            padding: 3rem 1.5rem;
+        }
+        background-color: $grey-bg;
+        h3 {
+            text-align: center;
+        }
+        &-table {
+            max-width: 1600px;
+            margin: 3rem auto 0;
+            @media only screen and (max-width:768px){
+                overflow-x: scroll;
+            }
+            table {
+                thead, th, td {
+                    padding: 1.5rem;
+                    border: {
+                        color: var(--contrast);
+                        width: 1px;
+                    }
+                }
+                th {
+                    background-color: var(--contrast);
+                    color: var(--base-3);
+                }
+                td {
+                    background-color: var(--base-3);
+                    border-color: var(--contrast-3);
+                    text-align: center;
+                    &:first-of-type {
+                        background-color: var(--accent);
+                        border-color: var(--accent);
+                        color: var(--base-3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Content Section */
+
+.contentBlocks {
+    @media only screen and (min-width:769px){
+        padding: 3rem 0;
+    }
+    &-contentBlock {
+        display: flex;
+        flex-wrap: wrap;
+        @media only screen and (min-width:769px){
+            &:nth-of-type(even){
+                .contentBlocks-contentBlock-image {
+                    order: 2;
+                }
+            }
+        }
+        & > * {
+            flex: 100%;
+            @media only screen and (min-width:769px){
+                flex: 50%;
+            }
+        }
+        &-image {
+            display: flex;
+            img {
+                display: block;
+                object-fit: cover;
+            }
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+            background-color: $grey-bg;
+            @media only screen and (min-width:768px){
+                padding: 3rem;
+            }
+        }
+        &-button {
+            @extend %contentButton;
+        }
+    }
+}
+
+/** Promo Banner Section */
+
+.promoBanner {
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    position: relative;
+    background: {
+        image: url('/wp-content/uploads/2023/06/solar-close-bg.jpg');
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    text-align: center;
+    @media only screen and (min-width:769px){
+        padding: 3rem;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(#000000,.75);
+    }
+    &-inner {
+        width: 100%;
+        margin: auto;
+        padding: 1.5rem 0;
+        position: relative;
+        z-index: 1;
+        @media only screen and (min-width:769px){
+            max-width: 65%;
+        }
+        h4 {
+            color: var(--accent);
+        }
+        p {
+            color: var(--base-3);
+        }
+    }
+}
+
+/** Downloads Section */
+
+.downloadBlocks {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    h3 {
+        flex: 100%;
+    }
+    @media only screen and (min-width:769px){
+        padding: 3rem;
+    }
+    @media only screen and (min-width:1600px){
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+    &-downloadBlock {
+        flex: 100%;
+        padding: calc(100% / 7.5);
+        background: {
+            image: url('/wp-content/uploads/2023/07/circles-bg-640.jpg');
+            position: left top;
+            repeat: no-repeat;
+            size: 33%;
+        }
+        &-image {
+            display: block;
+            margin-bottom: 1rem;
+            img {
+                display: block;
+                border: 3px solid darken($grey-bg,4.75%);
+            }
+        }
+        @media only screen and (min-width:640px){
+            flex: 0 0 calc( 100% / 2 );
+            padding: calc(100% / 12.5) calc(100% / 12.5) 0;
+        }
+        @media only screen and (min-width:1024px){
+            flex: 0 0 calc( 100% / 3 );
+            padding: calc(100% / 25) calc(100% / 25) 0;
+        }
+        a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: var(--contrast);
+            overflow: hidden;
+            &:before {
+                @include iconFont("\f56d");
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: -50px;
+                right: 0;
+                background-color: rgba(255,255,255,.85);
+                border-bottom-left-radius: 5px;
+                font-size: 2rem;
+                text-align: center;
+                transition: top .35s;
+            }
+            &:hover {
+                &:before {
+                    top: 0;
+                }
+            }
+        }
+        &-content {
+            text-align: center;
+            h4 {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/** Gallery Section */
+
+.galleryBlocks {
+    width: 100%;
+    padding: 1.5rem;
+    @media only screen and (min-width:769px){
+        padding: 1.5rem 3rem;
+    }
+    @media only screen and (min-width:1600px){
+        padding: {
+            left: 0;
+            right: 0;
+        }
+    }
+    .productGallery {
+        &-galleryItem {
+            cursor: pointer;
+            transition: box-shadow .35s;
+            &:hover {
+                box-shadow: 0 0 10px rgba(#000000,.5)
+            }
+            img {
+                display: block;
+            }
+        }
+    }
+}
+
+/** FAQs Section */
+
+.faqBlocks {
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem;
+    background: {
+        color: $grey-bg;
+        image: url('/wp-content/uploads/2023/06/general-grey-bg.jpg');
+        position: left bottom;
+        repeat: no-repeat;
+        size: 100vh;
+    }
+    h3 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    @media only screen and (min-width:769px){
+        padding: 1.5rem 5rem;
+        background: {
+            size: 50%;
+        }
+    }
+    &-faqBlock {
+        width: 100%;
+        max-width: 1600px;
+        margin: {
+            right: auto;
+            bottom: 1rem;
+            left: auto;
+        }
+        padding: 1rem;
+        background-color: var(--base-3);
+        cursor: pointer;
+        &.active {
+            & .faqBlocks-faqBlock-heading {
+                &:before {
+                    @include iconFont("\f068");
+                }
+            }
+            & .faqBlocks-faqBlock-content {
+                max-height: fit-content;
+                padding: 1rem 0 0 2rem;
+            }
+        }
+        &-heading {
+            display: flex;
+            align-items: center;
+            &:before {
+                @include iconFont("\2b");
+                margin-right: 1rem;
+            }
+            h4, h5 {
+                margin: 0;
+            }
+        }
+        &-content {
+            height: auto;
+            max-height: 0;
+            overflow-y: hidden;
+        }
+    }
+}

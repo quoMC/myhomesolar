@@ -1,0 +1,143 @@
+$brand-primary: #94C11F;
+
+.customSlider {
+    height: 100vh;
+    position: relative;
+    background: {
+        color: #F1F1F1;
+        image: url('../assets/grey-bg-symbol.png');
+        position: left -105px bottom -50px;
+        repeat: no-repeat;
+        size: 550px;
+    }
+    @media only screen and (min-width:680px){
+        height: 600px;
+    }
+    .slick {
+        &-list,
+        &-track {
+            height: 100%;
+        }
+        &-prev,
+        &-next {
+            &:before {
+                content: "";
+            }
+            &:hover {
+                background-color: darken($brand-primary,10%);
+                color: #ffffff;
+            }
+        }
+    }
+    &-prev,
+    &-next {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: {
+            width: 0;
+            radius: 50%;
+        }
+        background-color: $brand-primary;
+        font-size: 2rem;
+        color: #ffffff;
+        transition: background-color .35s;
+        &:hover {
+            cursor: pointer;
+        }
+        @media only screen and (min-width:1024px){
+            top: unset;
+            transform: translateY(12rem);
+        }
+        @media only screen and (min-width:1280px){
+            top: unset;
+            transform: translateY(10rem);
+        }
+    }
+    &-prev {
+        left: .25rem;
+        @media only screen and (min-width:680px){
+            left: -1.25rem;
+        }
+        @media only screen and (min-width:1024px){
+            left: 40%;
+        }
+        @media only screen and (min-width:1280px){
+            left: 42.5%;
+        }
+    }
+    &-next {
+        right: .25rem;
+        @media only screen and (min-width:680px){
+            right: -1.25rem;
+        }
+        @media only screen and (min-width:1024px){
+            right: 40%;
+        }
+        @media only screen and (min-width:1280px){
+            right: 42.5%;
+        }
+    }
+    &-slide {
+        &-image {
+            height: 50%;
+            background: {
+                position: center;
+                size: cover;
+            }
+        }
+        &-content {
+            height: 50%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 3rem;
+            text-align: center;
+        }
+        @media only screen and (min-width:680px){
+            &-image {
+                width: 50%;
+                height: 100%;
+                float: right;
+            }
+            &-content {
+                width: 100%;
+                max-width: 55vw;
+                height: auto;
+                position: absolute;
+                top: 4rem;
+                bottom: 4rem;
+                left: 8.5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+                background-color: #ffffff;
+                box-shadow: 0 0 10px rgba(0,0,0,.15);
+                p {
+                    font-size: 17px;
+                }
+                .button {
+                    display: inline-flex;
+                    background-color: var(--accent);
+                    color: #ffffff;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                }
+            }
+        }
+        @media only screen and (min-width:1024px){
+            &-content {
+                width: 100%;
+                max-width: 45vw;
+            }
+        }
+    }
+}

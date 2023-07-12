@@ -1,0 +1,30 @@
+{
+    "0" : {
+        "slide_content" : "<h3>Why Choose Black Solar Panels? </h3><p>When it comes to selecting solar panels for your home, aesthetics and efficiency both play a crucial role. Black solar panels offer a unique blend of high performance and sleek design that makes them a popular choice for many homeowners. Here's why you should consider opting for black solar panels: </p><p><a class=\"button\" href=\"/contact-us\">Contact Us</a></p>",
+        "slide_image" : "/wp-content/uploads/2023/07/why-choose-black-panels.jpg"
+    },
+    "1" : {
+        "slide_content" : "<h3>Enhanced Aesthetics</h3><p>Black solar panels have a sleek, modern appearance that seamlessly blends with most architectural styles. Their uniform colour can add a touch of sophistication to your home's exterior, enhancing its overall appeal. </p>",
+        "slide_image" : "/wp-content/uploads/2023/07/aesthetics.jpg"
+    },
+    "2" : {
+        "slide_content" : "<h3>High Efficiency</h3><p>Despite being slightly less efficient than their blue counterparts due to their design and the way they absorb sunlight, black solar panels still offer a high level of efficiency. They are designed to absorb more sunlight and convert it into electricity, making them a reliable energy solution for your home. </p>",
+        "slide_image" : "/wp-content/uploads/2023/07/efficiency.jpg"
+    },
+    "3" : {
+        "slide_content" : "<h3>Durability </h3><p>Black solar panels are designed to withstand harsh weather conditions and typically come with lengthy warranties. This ensures they remain a long-term, durable solution for your energy needs. </p>",
+        "slide_image" : "/wp-content/uploads/2023/07/durable.jpg"
+    },
+    "4" : {
+        "slide_content" : "<h3>Reduced Energy Bills </h3><p>Regardless of their colour, installing solar panels can significantly reduce your energy bills. They harness the power of the sun to generate electricity, reducing your reliance on grid electricity.  </p>",
+        "slide_image" : "/wp-content/uploads/2023/06/maximise-savings.jpg"
+    },
+    "5" : {
+        "slide_content" : "<h3>Energy Independence </h3><p>Solar panels allow you to generate your own electricity. This increases your energy independence and can provide a level of security against fluctuating energy prices.  </p>",
+        "slide_image" : "/wp-content/uploads/2023/06/energy-idependence.jpg"
+    },
+    "6" : {
+        "slide_content" : "<h3>Increased Property Value </h3><p>Homes equipped with solar panels often have a higher market value. If you decide to sell your property in the future, solar panels can be an attractive feature for potential buyers.</p>",
+        "slide_image" : "/wp-content/uploads/2023/07/increases-value.jpg"
+    }
+}
