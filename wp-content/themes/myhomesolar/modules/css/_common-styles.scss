@@ -1,0 +1,86 @@
+$grey-bg: #F1F1F1;
+
+@mixin iconFont($icon) {
+    content: $icon;
+    font: {
+        family: "Font Awesome 6 Free";
+        weight: 900;
+    }
+    color: var(--accent);
+}
+
+%fixedWidth {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+}
+
+%contentButton {
+    width: fit-content;
+    display: block;
+    padding: 15px 20px;
+    background-color: var(--accent);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    &:hover {
+        background-color: darken(#94C11F,10%);
+        color: #ffffff;
+    }
+}
+
+%customListStyle {
+    margin-left: 0;
+    list-style-type: none;
+    li {
+        display: flex;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        &:before {
+            @include iconFont("\f058");
+            margin-right: 1rem;
+        }
+    }
+}
+
+.site-content {
+    flex-wrap: wrap;
+}
+
+/** show fancybox nav over site nav */
+
+.fancybox__container {
+    z-index: 10001!important;
+}
+
+/** Breadcrumbs Section */
+
+.moduleBreadcrumbs {
+    width: 100%;
+    padding: 5px 1.5rem;
+    background-color: $grey-bg;
+    @media only screen and (min-width:769px){
+        padding: {
+            right: 3rem;
+            left: 3rem;
+        }
+    }
+    @media only screen and (min-width:1600px){
+        padding: {
+            right: 0;
+            left: 0;
+        }
+    }
+    div {
+        max-width: 100%;
+        margin: auto;
+        font-size: 14px;
+        @media only screen and (min-width:1600px){
+            max-width: 1600px;
+        }
+        a {
+            text-decoration: none;
+
+        }
+    }
+}

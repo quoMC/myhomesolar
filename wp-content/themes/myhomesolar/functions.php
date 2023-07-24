@@ -13,7 +13,7 @@
 
 	/** Disable sidebar in selected post types (front end) */
 	function product_post_sidebar_layout( $layout ) {
-		$post_types = array( 'products' );
+		$post_types = array( 'products', 'case-study' );
 
 		if ( in_array( get_post_type(), $post_types ) ) {
 			return 'no-sidebar';
@@ -23,5 +23,8 @@
 	}
 	add_filter( 'generate_sidebar_layout', 'product_post_sidebar_layout' );
 
-	/** Include the Events Functions */
+	/** Include the Products Functions */
 	include_once("functions/products/functions.php");
+
+	/** Include the Case Studies Functions */
+	include_once("functions/case-studies/functions.php");

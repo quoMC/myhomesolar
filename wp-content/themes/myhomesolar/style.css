@@ -151,10 +151,10 @@ justify-content: center;}
 .site-content .fa-envelope::before,
 .site-content .fa-location-dot::before, .fa-map-marker-alt::before
 {
-display: inline-block;
-padding-right: 5px;
-width: 20px;
-text-align: center;
+    display: inline-block;
+    padding-right: 5px;
+    width: 20px;
+    text-align: center;
 }
 
 .footerMenu ul {
@@ -170,4 +170,10 @@ text-align: center;
 
 .footerMenu ul li a:hover {
 	color:#94C11F;
+}
+
+@media only screen and (min-width:641px){
+    #menu-partners-footer-menu {
+        column-count: 3;
+    }
 }

@@ -1,3 +1,9 @@
+.mhsBenefits .inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+}
+
 .contentBlocks-contentBlock-button, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant-button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -14,6 +20,25 @@
   color: #ffffff;
 }
 
+.contentBlocks-contentBlock-content ul, .contentBlocks-contentBlock-content ol, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ul, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ol, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ul, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ol {
+  margin-left: 0;
+  list-style-type: none;
+}
+.contentBlocks-contentBlock-content ul li, .contentBlocks-contentBlock-content ol li, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ul li, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ol li, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ul li, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ol li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.contentBlocks-contentBlock-content ul li:before, .contentBlocks-contentBlock-content ol li:before, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ul li:before, .seriesBlocks-seriesBlock-seriesVariants-seriesVariant ol li:before, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ul li:before, .seriesBlocks-seriesBlock-seriesOverview-contentBlock ol li:before {
+  content: "\f058";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--accent);
+  margin-right: 1rem;
+}
+
 .site-content {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -22,6 +47,38 @@
 /** show fancybox nav over site nav */
 .fancybox__container {
   z-index: 10001 !important;
+}
+
+/** Breadcrumbs Section */
+.moduleBreadcrumbs {
+  width: 100%;
+  padding: 5px 1.5rem;
+  background-color: #F1F1F1;
+}
+@media only screen and (min-width: 769px) {
+  .moduleBreadcrumbs {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .moduleBreadcrumbs {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.moduleBreadcrumbs div {
+  max-width: 100%;
+  margin: auto;
+  font-size: 14px;
+}
+@media only screen and (min-width: 1600px) {
+  .moduleBreadcrumbs div {
+    max-width: 1600px;
+  }
+}
+.moduleBreadcrumbs div a {
+  text-decoration: none;
 }
 
 main,
@@ -217,38 +274,6 @@ main {
   display: block;
 }
 
-/** Breadcrumbs Section */
-.productBreadcrumbs {
-  width: 100%;
-  padding: 5px 1.5rem;
-  background-color: #F1F1F1;
-}
-@media only screen and (min-width: 769px) {
-  .productBreadcrumbs {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  .productBreadcrumbs {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-.productBreadcrumbs div {
-  max-width: 100%;
-  margin: auto;
-  font-size: 14px;
-}
-@media only screen and (min-width: 1600px) {
-  .productBreadcrumbs div {
-    max-width: 1600px;
-  }
-}
-.productBreadcrumbs div a {
-  text-decoration: none;
-}
-
 /** Series Section */
 .seriesBlocks {
   width: 100%;
@@ -258,6 +283,9 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border-bottom: 3px solid #F1F1F1;
+  /* & ~ .seriesSpec-specTable {
+      margin-top: 1.5rem;
+  } */
 }
 .seriesBlocks-seriesBlock {
   -webkit-box-flex: 100%;
@@ -327,24 +355,6 @@ main {
 }
 .seriesBlocks-seriesBlock-seriesOverview-contentBlock:first-of-type p:first-of-type {
   font-size: 21px;
-}
-.seriesBlocks-seriesBlock-seriesOverview-contentBlock ul {
-  margin-left: 0;
-  list-style-type: none;
-}
-.seriesBlocks-seriesBlock-seriesOverview-contentBlock ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-.seriesBlocks-seriesBlock-seriesOverview-contentBlock ul li:before {
-  content: "\f058";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: var(--accent);
-  margin-right: 1rem;
 }
 .seriesBlocks-seriesBlock-seriesOverview-imageBlock {
   display: -webkit-box;
@@ -482,15 +492,19 @@ main {
 }
 .seriesSpec-specTable h3 {
   text-align: center;
+  margin-bottom: 3rem;
 }
 .seriesSpec-specTable-table {
   max-width: 1600px;
-  margin: 3rem auto 0;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 768px) {
   .seriesSpec-specTable-table {
     overflow-x: scroll;
   }
+}
+.seriesSpec-specTable-table table {
+  margin: 0;
 }
 .seriesSpec-specTable-table table thead, .seriesSpec-specTable-table table th, .seriesSpec-specTable-table table td {
   padding: 1.5rem;
@@ -618,6 +632,56 @@ main {
   color: var(--base-3);
 }
 
+/** MHS Benefits Section */
+.mhsBenefits {
+  width: 100%;
+  padding: 0 1.5rem;
+}
+@media only screen and (min-width: 769px) {
+  .mhsBenefits {
+    padding: 3rem;
+  }
+}
+.mhsBenefits > h4 {
+  text-align: center;
+}
+.mhsBenefits .inner {
+  padding: 3rem 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media only screen and (min-width: 1025px) {
+  .mhsBenefits-mhsBenefit {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+  }
+}
+.mhsBenefits-mhsBenefit:nth-of-type(odd) {
+  padding-right: 30px;
+}
+.mhsBenefits-mhsBenefit:nth-of-type(even) {
+  padding-left: 30px;
+}
+.mhsBenefits-mhsBenefit:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+.mhsBenefits-mhsBenefit i {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  display: block;
+  border-radius: 50px;
+  background-color: var(--accent);
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 50px;
+  color: var(--base-3);
+}
+
 /** Downloads Section */
 .downloadBlocks {
   padding: 1.5rem;
@@ -628,7 +692,7 @@ main {
       flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
 }
 .downloadBlocks h3 {
   -webkit-box-flex: 100%;

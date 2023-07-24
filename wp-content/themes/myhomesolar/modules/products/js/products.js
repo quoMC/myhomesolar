@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function() {
 
     if(jQuery(".galleryBlocks").length){

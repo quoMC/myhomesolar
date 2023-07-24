@@ -1,0 +1,280 @@
+
+@import "../../css/common-styles";
+
+.heroSection {
+    width: 100%;
+    max-width: 1740px;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    &-text {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        @media only screen and (min-width:641px){
+            flex: 0 0 calc( 100% / 4 );
+            padding: 0 4rem;
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+    &-gallery {
+        flex: 1;
+    }
+}
+
+.caseStudyGallery {
+    max-height: 400px;
+    display: flex;
+    padding: 0 1.5rem;
+    @media only screen and (min-width:641px){
+        padding: 0;
+    }
+    &-galleryItem {
+        flex: 100%;
+        cursor: pointer;
+        display: none;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            @include iconFont("\f065");
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: rgba(255,255,255,.85);
+            border-bottom-left-radius: 5px;
+            font-size: 2rem;
+            text-align: center;
+            transition: top .35s;
+        }
+        @media only screen and (min-width:1023px){
+            &:before {
+                top: -50px;
+            }
+            &:hover {
+                &:before {
+                    top: 0;
+                }
+            }
+        }
+        &:nth-of-type(1){
+            display: block;
+        }
+        &--hidden {
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        @media only screen and (min-width:641px){
+            flex: calc( 100% / 2 );
+        }
+        @media only screen and (min-width:1023px){
+            &:nth-of-type(2){
+                display: block;
+            }
+            &:not(:first-of-type){
+                border: {
+                    color: white;
+                    style: solid;
+                    top-width: 0;
+                    right-width: 0;
+                    bottom-width: 0;
+                    left-width: 4px;
+                }
+            }
+        }
+        @media only screen and (min-width:1247px){
+            flex: calc( 100% / 3 );
+            display: block;
+        }
+    }
+}
+
+.systemOverview {
+    @extend %fixedWidth;
+    &-title {
+        padding: 3rem 0;
+        text-align: center;
+        h3 {
+            max-width: 75%;
+            min-width: 50%;
+            margin: 0 auto;
+        }
+    }
+    &-components {
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        &-componentBlock {
+            flex: calc( 100% / 5 );
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            padding: 2rem;
+            header {
+                margin-bottom: 1rem;
+            }
+            main {
+                text-align: center;
+                font-weight: bold;
+            }
+            @media only screen and (min-width:641px){
+                align-items: flex-start;
+                padding: 1.5rem;
+                main {
+                    text-align: left;
+                }
+            }
+            @media only screen and (min-width:1024px){
+                padding: 2rem;
+            }
+        }
+    }
+    &-content {
+        padding: 1.5rem;
+        @media only screen and (min-width:1023px){
+            padding: 3rem;
+            column: {
+                count: 2;
+                gap: 65px;
+            }
+        }
+        @media only screen and (min-width:1600px){
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+.testimonial {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 1.5rem 1.5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    @media only screen and (min-width:1024px){
+        padding: 3rem;
+    }
+    @media only screen and (min-width:1600px){
+        padding: 3rem 0;
+    }
+    &-content {
+        flex: 40%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding-top: 1.5rem;
+        &:only-child {
+            & > div {
+                margin-right: 0;
+            }
+        }
+        &:before {
+            @include iconFont("\f10d");
+            font-size: 3rem;
+        }
+        & > div {
+            padding: {
+                right: 3rem;
+                left: 1rem;
+            }
+            border-left: 4px solid var(--accent);
+            font: {
+                family: "Times New Roman", serif;
+                size: 22px;
+                style: italic;
+            }
+        }
+        cite {
+            font: {
+                family: "Poppins", serif;
+                size: 1em;
+                style: normal;
+            }
+            color: var(--contrast-2);
+        }
+        @media only screen and (max-width:1024px){
+            flex: 100%;
+            order: 2;
+            & > div {
+                padding-right: 0;
+            }
+        }
+    }
+    &-video {
+        flex: 60%;
+        @media only screen and (max-width:1024px){
+            flex: 100%;
+            order: 1;
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+            @media only screen and (min-width:639px){
+                height: 500px;
+            }
+        }
+    }
+}
+
+.installationDetail {
+    width: 100%;
+    padding: 0 1.5rem;
+    background-color: $grey-bg;
+    @media only screen and (min-width:769px){
+        padding: 3rem;
+    }
+    .inner {
+        @extend %fixedWidth;
+        padding: 3rem 0 1rem;
+        @media only screen and (min-width:767px){
+            column: {
+                count: 2;
+                gap: 65px;
+            }
+        }
+    }
+    &-installDetailBlock {
+        &:not(:last-of-type){
+            margin-bottom: 2rem;
+        }
+        & i {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+            display: block;
+            border-radius: 50px;
+            background-color: var(--accent);
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 50px;
+            color: var(--base-3);
+        }
+    }
+}
+
+.bottomContent {
+    @extend %fixedWidth;
+    padding: 1.5rem;
+    @media only screen and (min-width:1023px){
+        padding: 3rem;
+        column: {
+            count: 2;
+            gap: 65px;
+        }
+    }
+    @media only screen and (min-width:1600px){
+        padding: 3rem 0;
+    }
+}

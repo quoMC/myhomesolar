@@ -166,9 +166,34 @@ get_header();
 
     /** Specs. Table Section */
 
-    if(get_field('series_spec_table_content')){
-        include get_stylesheet_directory() . "/modules/products/templates/table-product-type.tpl";
+    if(get_field('series_type')){
+
+        echo "<section class=\"seriesSpec-specTable\">";
+
+            if(get_field('series_spec_table_title')){
+                echo "<h3>" . get_field('series_spec_table_title') . "</h3>";
+            }
+
+            $seriesType = get_field('series_type');
+
+            switch($seriesType){
+                case "battery":
+                    include get_stylesheet_directory() . "/modules/products/templates/table-product-type--battery.tpl";
+                    break;
+                case "inverter":
+                    //include get_stylesheet_directory() . "/modules/products/templates/table-product-type--inverter.tpl";
+                    "Awaiting table template";
+                    break;
+                case "panel":
+                    include get_stylesheet_directory() . "/modules/products/templates/table-product-type--panel.tpl";
+                    break;
+            }
+
+        echo "</section>";
+
     }
+
+    include get_stylesheet_directory() . "/modules/products/templates/table-product-type.tpl";
 
     /** Content Section */
 
@@ -178,47 +203,14 @@ get_header();
 
     }
 
-    /** MHS - Promo Banner Section */
+    /** Promo Banner Section */
 
-    if(get_field('promo_banner_title')){
-        echo "<section class=\"promoBanner\">"
-            . "<div class=\"promoBanner-inner\">"
-                . "<h4>" . get_field('promo_banner_title') . "</h4>"
-                . get_field('promo_banner_title_content')
-            . "</div>"
-        . "</section>";
-    } else {
-        echo "<section class=\"promoBanner\">"
-            . "<div class=\"promoBanner-inner\">"
-                . "<h4>At MyHomeSolar, we believe in the potential of solar power to transform homes</h4>"
-                . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable solar panels and how they can help power your home sustainably and efficiently.</p>"
-            . "</div>"
-        . "</section>";
-    }
-
-    /** MHS - Benefits */
-
-    if(get_field('benefit_block')){
-        echo "<section class=\"mhsBenefits\">"
-            . "<h4>" . get_field('benefit_title') . "</h4>"
-            . "<div class=\"inner\">";
-
-        $mhsBenefits = get_field('benefit_block');
-
-        foreach ($mhsBenefits as $mhsBenefitId => $mhsBenefit) {
-
-            echo "<article class=\"mhsBenefits-mhsBenefit\">"
-                . $mhsBenefit['benefit_icon']
-                . "<h4>" . $mhsBenefit['benefit_title'] . "</h4>"
-                . $mhsBenefit['benefit_content']
-            . "</article>";
-
-        }
-
-        echo "</div>"
-        . "</section>";
-
-    }
+    echo "<section class=\"promoBanner\">"
+        . "<div class=\"promoBanner-inner\">"
+            . "<h4>At MyHomeSolar, we believe in the potential of solar power to transform homes</h4>"
+            . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable solar panels and how they can help power your home sustainably and efficiently.</p>"
+        . "</div>"
+    . "</section>";
 
     /** Product Gallery Section */
 

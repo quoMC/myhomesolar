@@ -22,7 +22,7 @@ get_header();
         $post_categories['1']->slug = $post_categories['0']->slug . "-" . $post_categories['1']->slug;
     }
 
-    echo "<section class=\"productBreadcrumbs\">"
+    echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
             . "<a href=\"" . site_url() . "\" title=\"MyHomeSolar - Home\"><i class=\"fa-solid fa-house\"></i></a>"
             . " &gt; ";
