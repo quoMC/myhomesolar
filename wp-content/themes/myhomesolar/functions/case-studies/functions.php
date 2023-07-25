@@ -8,13 +8,13 @@
                 'singular_name' => __('Case Study'),
             ),
             'public' => true,
-            'has_archive' => false,
+            'has_archive' => true,
             'rewrite' => array(
                 'slug' => 'case-study',
                 'with_front' => true,
                 'hierarchical' => true
             ),
-            'supports' => array('title','custom-fields'),
+            'supports' => array('title','excerpt','thumbnail','custom-fields'),
             'menu_icon' => 'dashicons-portfolio',
             'menu_position' => 20,
             'show_in_rest' => true,

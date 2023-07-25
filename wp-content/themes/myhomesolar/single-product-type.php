@@ -86,8 +86,17 @@ get_header();
                             . $seriesBlock['series_content_column_1']
                         . "</div>"
                         . "<div class=\"seriesBlocks-seriesBlock-seriesOverview-contentBlock\">"
-                            . $seriesBlock['series_content_column_2']
-                        . "</div>"
+                            . $seriesBlock['series_content_column_2'];
+
+                            if(!empty($seriesBlock['single_series_button']['button_link']['url'])){
+                                $button_label__single = $seriesBlock['single_series_button']['button_label'];
+                                $button_title__single= $seriesBlock['single_series_button']['button_link']['title'];
+                                $button_url__single = $seriesBlock['single_series_button']['button_link']['url'];
+
+                                echo "<a class=\"seriesBlocks-seriesBlock-seriesVariants-seriesVariant-button\" href=\"" . $button_url__single . "\" title=\"" . $button_title__single . "\">" . $button_label__single . "</a>";
+                            }
+
+                        echo "</div>"
                         . "<div class=\"seriesBlocks-seriesBlock-seriesOverview-imageBlock\">"
                             . "<picture>"
                                 . "<source srcset=\"" . $seriesBlock['series_image']['sizes']['medium'] ."\" media=\"(orientation: portrait)\">"

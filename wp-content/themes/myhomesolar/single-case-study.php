@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <style>
-    <?php include get_stylesheet_directory() . "/modules/case-studies/css/style.min.css"; ?>
+    <?php include get_stylesheet_directory() . "/modules/case-studies/css/single/style.min.css"; ?>
     <?php include get_stylesheet_directory() . "/vendor/fancybox/fancybox.min.css"; ?>
 </style>
 
@@ -45,16 +45,30 @@ get_header();
     include get_stylesheet_directory() . "/modules/case-studies/templates/system-overview-block.tpl";
 
     /** Testimonial Section */
-    include get_stylesheet_directory() . "/modules/case-studies/templates/testimonial-block.tpl";
+    if(get_field('testimonial_title') || get_field('testimonial_content') || get_field('testimonial_video')){
+        include get_stylesheet_directory() . "/modules/case-studies/templates/testimonial-block.tpl";
+    }
 
     /** Installation Detail Section */
-    include get_stylesheet_directory() . "/modules/case-studies/templates/installation-detail-block.tpl";
+    if(!empty(get_field('install_detail_block'))){
+        include get_stylesheet_directory() . "/modules/case-studies/templates/installation-detail-block.tpl";
+    }
 
     /** Bottom Content */
-    if(get_field('bottom_content')){
-        echo "<section class=\"bottomContent\">"
-            . get_field('bottom_content')
+    if(!empty(get_field('footer_content'))){
+
+        $footerContent = get_field('footer_content');
+        $footerContent_split_columns = $footerContent['split_columns'];
+        $footerContent_content = $footerContent['content'];
+
+        echo "<section class=\"footerContent";
+            if(!$footerContent_split_columns){echo " footerContent--singleCol";}
+        echo "\">"
+            . "<div class=\"inner\">"
+                . $footerContent_content
+            . "</div>"
         . "</section>";
+
     }
 
     get_footer();

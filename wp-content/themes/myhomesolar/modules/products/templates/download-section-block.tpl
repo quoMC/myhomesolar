@@ -9,6 +9,9 @@
 
         $downloadBlock_title = $downloadBlock['download_title'];
         $downloadBlock_thumb = $downloadBlock['download_thumbnail']['sizes']['medium_large'];
+        if(empty($downloadBlock_thumb)){
+            $downloadBlock_thumb = "/wp-content/uploads/2023/07/download-placeholder.jpg";
+        }
         $downloadBlock_file = $downloadBlock['download_file']['url'];
         $downloadBlock_fileTitle = $downloadBlock['download_file']['title'];
 

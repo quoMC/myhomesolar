@@ -1,9 +1,10 @@
 
-@import "../../css/common-styles";
+@import "../../../css/common-styles";
 
 .heroSection {
     width: 100%;
     max-width: 1740px;
+    max-height: 400px;
     margin-left: auto;
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +14,7 @@
         padding: 1.5rem;
         @media only screen and (min-width:641px){
             flex: 0 0 calc( 100% / 4 );
-            padding: 0 4rem;
+            padding: 0 3rem;
         }
         h2 {
             margin: 0;
@@ -25,7 +26,7 @@
 }
 
 .caseStudyGallery {
-    max-height: 400px;
+    max-height: 100%;
     display: flex;
     padding: 0 1.5rem;
     @media only screen and (min-width:641px){
@@ -100,22 +101,19 @@
 .systemOverview {
     @extend %fixedWidth;
     &-title {
-        padding: 3rem 0;
+        max-width: 80%;
+        min-width: 50%;
+        margin: 0 auto;
+        padding: 3rem 0 0;
         text-align: center;
-        h3 {
-            max-width: 75%;
-            min-width: 50%;
-            margin: 0 auto;
-        }
     }
     &-components {
         width: 100%;
-        max-width: 90%;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
         &-componentBlock {
-            flex: calc( 100% / 5 );
+            flex: calc( 100% / 6 );
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -126,7 +124,9 @@
             }
             main {
                 text-align: center;
-                font-weight: bold;
+                h5 {
+                    margin: 0;
+                }
             }
             @media only screen and (min-width:641px){
                 align-items: flex-start;
@@ -153,6 +153,15 @@
             padding: 1.5rem 0;
         }
     }
+    &-content--singleCol {
+        @media only screen and (min-width:1023px){
+            column-count: 1;
+            max-width: 90%;
+            min-width: 75%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
 }
 
 .testimonial {
@@ -167,6 +176,9 @@
     }
     @media only screen and (min-width:1600px){
         padding: 3rem 0;
+    }
+    &-intro {
+        text-align: center;
     }
     &-content {
         flex: 40%;
@@ -237,6 +249,7 @@
     }
     .inner {
         @extend %fixedWidth;
+        display: flex;
         padding: 3rem 0 1rem;
         @media only screen and (min-width:767px){
             column: {
@@ -264,17 +277,33 @@
     }
 }
 
-.bottomContent {
+.footerContent {
     @extend %fixedWidth;
-    padding: 1.5rem;
-    @media only screen and (min-width:1023px){
-        padding: 3rem;
-        column: {
-            count: 2;
-            gap: 65px;
+    .inner {
+        padding: 1.5rem;
+        &:empty {
+            display: none;
+        }
+        @media only screen and (min-width:1023px){
+            padding: 3rem;
+            column: {
+                count: 2;
+                gap: 65px;
+            }
+        }
+        @media only screen and (min-width:1600px){
+            padding: 3rem 0;
         }
     }
-    @media only screen and (min-width:1600px){
-        padding: 3rem 0;
+    &--singleCol {
+        @media only screen and (min-width:1023px){
+            .inner {
+                column-count: 1;
+                max-width: 90%;
+                min-width: 75%;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
     }
 }
