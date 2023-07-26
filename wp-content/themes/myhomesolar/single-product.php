@@ -19,7 +19,7 @@ get_header();
 
     if( $post_categories ){
         $post_category_1 = $post_categories['0']->slug;
-        $post_categories['1']->slug = $post_categories['0']->slug . "-" . $post_categories['1']->slug;
+        $post_categories['1']->slug = $post_categories['0']->slug . "/" . $post_categories['0']->slug . "-" . $post_categories['1']->slug;
     }
 
     echo "<section class=\"moduleBreadcrumbs\">"
@@ -80,7 +80,7 @@ get_header();
 
                         $active = $tabListCounter == 0 ? " active" : "";
 
-                        echo "<li class=\"heroSectionContent-tabs-tab heroSectionContent-tabs-tab__" . strtolower($heroSectionTab['tab_title']) . $active . "\" role=\"none\" data-tabTarget=\"heroSectionContent-tabs-tabContent__" . $tabId ."\">"
+                        echo "<li class=\"heroSectionContent-tabs-tab heroSectionContent-tabs-tab--" . strtolower($heroSectionTab['tab_title']) . $active . "\" role=\"none\" data-tabTarget=\"heroSectionContent-tabs-tabContent__" . $tabId ."\">"
                             . $heroSectionTab['tab_title']
                         . "</li>";
 

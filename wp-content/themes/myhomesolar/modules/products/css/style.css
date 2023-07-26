@@ -228,26 +228,32 @@ main {
 .heroSection .heroSectionContent-tabs-tab.active, .heroSection .heroSectionContent-tabs-tab:hover {
   color: var(--contrast);
 }
-.heroSection .heroSectionContent-tabs-tab__benefits:before {
+.heroSection .heroSectionContent-tabs-tab:before {
+  margin-right: 0.5rem;
+}
+.heroSection .heroSectionContent-tabs-tab--benefits:before {
   content: "\f5ba";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: var(--accent);
-  margin-right: 0.5rem;
 }
-.heroSection .heroSectionContent-tabs-tab__features:before {
+.heroSection .heroSectionContent-tabs-tab--features:before {
   content: "\f0ae";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: var(--accent);
-  margin-right: 0.5rem;
 }
-.heroSection .heroSectionContent-tabs-tab__installation:before {
+.heroSection .heroSectionContent-tabs-tab--installation:before {
   content: "\f807";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: var(--accent);
-  margin-right: 0.5rem;
+}
+.heroSection .heroSectionContent-tabs-tab--overview:before {
+  content: "\f0ac";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--accent);
 }
 .heroSection .heroSectionContent-tabs-tabContent {
   display: none;

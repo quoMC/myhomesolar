@@ -125,22 +125,27 @@ main {
                 &:hover {
                     color: var(--contrast);
                 }
-                &__benefits {
+                &:before {
+                    margin-right: .5rem;
+                }
+                &--benefits {
                     &:before {
                         @include iconFont("\f5ba");
-                        margin-right: .5rem;
                     }
                 }
-                &__features {
+                &--features {
                     &:before {
                         @include iconFont("\f0ae");
-                        margin-right: .5rem;
                     }
                 }
-                &__installation {
+                &--installation {
                     &:before {
                         @include iconFont("\f807");
-                        margin-right: .5rem;
+                    }
+                }
+                &--overview {
+                    &:before {
+                        @include iconFont("\f0ac");
                     }
                 }
             }

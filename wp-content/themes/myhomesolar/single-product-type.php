@@ -14,8 +14,6 @@ get_header();
 
 <?php
 
-    //echo "<pre>" . print_r(get_fields()) . "</pre>";
-
     $postTitle = get_the_title();
 
     /** Breadcrumbs Section */
@@ -29,14 +27,24 @@ get_header();
 
             if( $post_categories ){
                 foreach($post_categories as $post_category){
-                    echo "<a href=\"/" . $post_category->slug . "\" title=\"" . $post_category->name . "\">"
+
+                    $catLink = site_url() . "/" . $post_category->slug;
+
+                    if( $post_category === end( $post_categories ) ) {
+                        $lastCat = "noLink";
+                        $catLink = get_page_link();
+                        $onClick = " onclick=\"return false;\"";
+                        $postTitle = "";
+                    }
+
+                    echo "<a class=\"" . $lastCat . "\" href=\"" . $catLink . "\" title=\"" . $postTitle . "\"" . $onClick . ">"
                         . $post_category->name
-                    . "</a>"
-                    . " &gt; ";
+                    . "</a>";
+                    if( $post_category != end( $post_categories ) ) {
+                        echo " &gt; ";
+                    }
                 }
             }
-
-            echo $postTitle;
 
         echo "</div>"
     . "</section>";
