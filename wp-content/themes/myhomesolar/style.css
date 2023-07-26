@@ -177,3 +177,11 @@ justify-content: center;}
         column-count: 3;
     }
 }
+
+/** Site Reviews */
+#site-reviews .glsr-review {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+}
