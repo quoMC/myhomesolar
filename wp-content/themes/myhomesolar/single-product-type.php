@@ -19,7 +19,8 @@ get_header();
     /** Breadcrumbs Section */
 
     $post_categories = wp_get_post_categories( $post->ID, array( 'fields' => 'all' ) );
-    $catNames = array();
+    $aCatNames = array();
+    $aCatSlugs = array();
 
     echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
@@ -29,7 +30,8 @@ get_header();
             if( $post_categories ){
                 foreach($post_categories as $post_category){
 
-                    $catNames[] = $post_category->name;
+                    $aCatNames[] = $post_category->name;
+                    $aCatSlugs[] = $post_category->slug;
 
                     $catLink = site_url() . "/" . $post_category->slug;
 
@@ -53,11 +55,9 @@ get_header();
     . "</section>";
 
     /** Header Image */
-
     echo "<section class=\"productPageHeader\" style=\"background-image:url('" . get_the_post_thumbnail_url() . "')\"></section>";
 
     /** Manufacturer Section */
-
     if(get_field('manufacturer_intro')){
 
         $manufacturerLogo = get_field('manufacturer_logo');
@@ -66,10 +66,12 @@ get_header();
 
         echo "<main class=\"manufacturerSection\">"
                 . "<div class=\"manufacturerSection-logo\">"
+                    . "<a href=\"/" . $aCatSlugs[0] . "\" title=\"" . $aCatNames[0] . "\">"
                     . "<picture>"
                         . "<source srcset=\"" . $manufacturerLogo_source ."\" media=\"(orientation: portrait)\">"
                         . "<img src=\"" . $manufacturerLogo_source . "\" alt=\"" . $manufacturerLogo_title . "\">"
                     . "</picture>"
+                    . "</a>"
                 . "</div>"
                 . "<div class=\"manufacturerSection-intro\">"
                     . get_field('manufacturer_intro')
@@ -78,7 +80,6 @@ get_header();
     }
 
     /** Series Section */
-
     if(get_field('series_block')){
 
         $seriesBlocks = get_field('series_block');
@@ -152,7 +153,6 @@ get_header();
     }
 
     /** Specs. Panel Section */
-
     if(get_field('series_spec_block_title')){
 
         echo "<section class=\"seriesSpec-specPanels\">"
@@ -185,13 +185,11 @@ get_header();
     }
 
     /** Specs. Table Section */
-
     if(get_field('series_spec_table_content')){
         include get_stylesheet_directory() . "/modules/products/templates/table-product-type.tpl";
     }
 
     /** Content Section */
-
     if(get_field('content_section_block')){
 
         include get_stylesheet_directory() . "/modules/products/templates/content-section-block.tpl";
@@ -199,7 +197,6 @@ get_header();
     }
 
     /** MHS - Promo Banner Section */
-
     if(get_field('promo_banner_title')){
         echo "<section class=\"promoBanner\">"
             . "<div class=\"promoBanner-inner\">"
@@ -211,13 +208,12 @@ get_header();
         echo "<section class=\"promoBanner\">"
             . "<div class=\"promoBanner-inner\">"
                 . "<h4>At MyHomeSolar, we believe in the potential of solar power to transform homes</h4>"
-                . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable " . strtolower($catNames[1]) . " and how they can help power your home sustainably and efficiently.</p>"
+                . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable " . strtolower($aCatNames[1]) . " and how they can help power your home sustainably and efficiently.</p>"
             . "</div>"
         . "</section>";
     }
 
     /** MHS - Benefits */
-
     if(get_field('benefit_block')){
         echo "<section class=\"mhsBenefits\">"
             . "<h4>" . get_field('benefit_title') . "</h4>"
@@ -241,7 +237,6 @@ get_header();
     }
 
     /** Product Gallery Section */
-
     if(get_field('custom_gallery')){
 
         include get_stylesheet_directory() . "/modules/products/templates/custom-gallery-block.tpl";
@@ -249,7 +244,6 @@ get_header();
     }
 
     /** Product Downloads Section */
-
     if(get_field('download_block')){
 
         include get_stylesheet_directory() . "/modules/products/templates/download-section-block.tpl";
@@ -257,14 +251,13 @@ get_header();
     }
 
     /** Product FAQs Section */
-
     if(get_field('faq_block')){
 
         include get_stylesheet_directory() . "/modules/products/templates/faq-block.tpl";
 
     }
 
-get_footer();
+    get_footer();
 
 ?>
 
