@@ -19,6 +19,7 @@ get_header();
     /** Breadcrumbs Section */
 
     $post_categories = wp_get_post_categories( $post->ID, array( 'fields' => 'all' ) );
+    $catNames = array();
 
     echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
@@ -27,6 +28,8 @@ get_header();
 
             if( $post_categories ){
                 foreach($post_categories as $post_category){
+
+                    $catNames[] = $post_category->name;
 
                     $catLink = site_url() . "/" . $post_category->slug;
 
@@ -208,7 +211,7 @@ get_header();
         echo "<section class=\"promoBanner\">"
             . "<div class=\"promoBanner-inner\">"
                 . "<h4>At MyHomeSolar, we believe in the potential of solar power to transform homes</h4>"
-                . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable solar panels and how they can help power your home sustainably and efficiently.</p>"
+                . "<p>We're excited to offer " . $postTitle . " as part of our mission to help you harness this potential. Contact us today to find out more about these remarkable " . strtolower($catNames[1]) . " and how they can help power your home sustainably and efficiently.</p>"
             . "</div>"
         . "</section>";
     }
