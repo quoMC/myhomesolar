@@ -57,6 +57,13 @@ a.noLink:hover {
     cursor: default;
 }
 
+.linkHeading a,
+.linkHeading a:visited,
+.linkHeading a:hover {
+    text-decoration: none;
+    color: var(--contrast);
+}
+
 @media only screen and (max-width:767px) {
 .revolution .solid {
 background-color: rgba(54, 54, 54, 1);
