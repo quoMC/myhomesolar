@@ -14,7 +14,7 @@
                 'with_front' => true,
                 'hierarchical' => true
             ),
-            'supports' => array('title','thumbnail','custom-fields'),
+            'supports' => array('title','thumbnail','custom-fields','revisions'),
             'menu_icon' => 'dashicons-index-card',
             'menu_position' => 20,
             'show_in_menu' => 'edit.php?post_type=product',
@@ -39,7 +39,7 @@
                 'with_front' => true,
                 'hierarchical' => true
             ),
-            'supports' => array('title','custom-fields'),
+            'supports' => array('title','custom-fields','revisions'),
             'menu_icon' => 'dashicons-products',
             'menu_position' => 20,
             'show_in_rest' => true,

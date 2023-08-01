@@ -19,8 +19,26 @@ get_header();
     /** Breadcrumbs Section */
 
     $post_categories = wp_get_post_categories( $post->ID, array( 'fields' => 'all' ) );
+    $primary_cat_id = get_post_meta($post->ID,'_yoast_wpseo_primary_category', true);
     $aCatNames = array();
     $aCatSlugs = array();
+
+    function compareByTermID($a, $b){
+        return $a->term_id - $b->term_id;
+    }
+
+    usort($post_categories, 'compareByTermID');
+
+    foreach($post_categories as $key => $data) {
+        if ($data->term_id == $primary_cat_id) {
+            unset($post_categories[$key]);
+            $post_categories[-1] = $data;
+            break;
+        }
+    }
+
+    ksort($post_categories);
+    $post_categories = array_values($post_categories);
 
     echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
@@ -74,6 +92,7 @@ get_header();
                     . "</a>"
                 . "</div>"
                 . "<div class=\"manufacturerSection-intro\">"
+                    //. readmore(get_field('manufacturer_intro'))
                     . get_field('manufacturer_intro')
                 . "</div>"
             . "</main>";

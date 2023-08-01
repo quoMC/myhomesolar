@@ -1,15 +1,16 @@
 .customSlider {
-  height: 100vh;
+  height: 115vh;
   position: relative;
   background-color: #F1F1F1;
   background-image: url("../assets/grey-bg-symbol.png");
-  background-position: left -105px bottom -50px;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 550px;
 }
 @media only screen and (min-width: 680px) {
   .customSlider {
     height: 600px;
+    background-position: left -105px bottom -50px;
   }
 }
 .customSlider .slick-list, .customSlider .slick-track {

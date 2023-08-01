@@ -14,7 +14,7 @@
                 'with_front' => true,
                 'hierarchical' => true
             ),
-            'supports' => array('title','excerpt','thumbnail','custom-fields'),
+            'supports' => array('title','excerpt','thumbnail','custom-fields','revisions'),
             'menu_icon' => 'dashicons-portfolio',
             'menu_position' => 20,
             'show_in_rest' => true,

@@ -179,9 +179,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     border-bottom: 3px solid $grey-bg;
-    /* & ~ .seriesSpec-specTable {
-        margin-top: 1.5rem;
-    } */
+    & ~ .seriesSpec-specTable {
+        margin-top: 3rem;
+    }
     &-seriesBlock {
         flex: 100%;
         & ~ .seriesBlocks-seriesBlock {
@@ -461,6 +461,7 @@ main {
     }
     text-align: center;
     @media only screen and (min-width:769px){
+        margin: 0 0 3rem;
         padding: 3rem;
     }
     &:before {

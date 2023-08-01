@@ -289,9 +289,9 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   border-bottom: 3px solid #F1F1F1;
-  /* & ~ .seriesSpec-specTable {
-      margin-top: 1.5rem;
-  } */
+}
+.seriesBlocks ~ .seriesSpec-specTable {
+  margin-top: 3rem;
 }
 .seriesBlocks-seriesBlock {
   -webkit-box-flex: 100%;
@@ -607,6 +607,7 @@ main {
 }
 @media only screen and (min-width: 769px) {
   .promoBanner {
+    margin: 0 0 3rem;
     padding: 3rem;
   }
 }

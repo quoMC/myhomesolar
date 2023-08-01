@@ -1,17 +1,18 @@
 $brand-primary: #94C11F;
 
 .customSlider {
-    height: 100vh;
+    height: 115vh;
     position: relative;
     background: {
         color: #F1F1F1;
         image: url('../assets/grey-bg-symbol.png');
-        position: left -105px bottom -50px;
+        position: center bottom;
         repeat: no-repeat;
         size: 550px;
     }
     @media only screen and (min-width:680px){
         height: 600px;
+        background-position: left -105px bottom -50px;
     }
     .slick {
         &-list,
