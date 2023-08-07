@@ -2,6 +2,15 @@
 
 /** Template Name: Product Type Page */
 
+add_filter( 'wpseo_replacements', function( $replacements ){
+
+    if( ! sizeof($replacements) && ! empty(get_field('manufacturer_intro')) ){
+        $replacements['%%excerpt%%'] = wp_html_excerpt( do_shortcode( get_field('manufacturer_intro') ), 155 );
+    }
+
+    return $replacements;
+});
+
 get_header();
 
 ?>
@@ -51,7 +60,9 @@ get_header();
                     $aCatNames[] = $post_category->name;
                     $aCatSlugs[] = $post_category->slug;
 
+                    $lastCat;
                     $catLink = site_url() . "/" . $post_category->slug;
+                    $onClick;
 
                     if( $post_category === end( $post_categories ) ) {
                         $lastCat = "noLink";
@@ -87,7 +98,7 @@ get_header();
                     . "<a href=\"/" . $aCatSlugs[0] . "\" title=\"" . $aCatNames[0] . "\">"
                     . "<picture>"
                         . "<source srcset=\"" . $manufacturerLogo_source ."\" media=\"(orientation: portrait)\">"
-                        . "<img src=\"" . $manufacturerLogo_source . "\" alt=\"" . $manufacturerLogo_title . "\">"
+                        . "<img width=\"300\" height=\"150\" src=\"" . $manufacturerLogo_source . "\" alt=\"" . $manufacturerLogo_title . "\">"
                     . "</picture>"
                     . "</a>"
                 . "</div>"
@@ -149,10 +160,11 @@ get_header();
 
                         if(!empty($seriesVariant['series_variant_button']['button_label'])){
                             $button_label = $seriesVariant['series_variant_button']['button_label'];
-                            $button_title = $seriesVariant['series_variant_button']['button_link']['title'];
+                            //$button_title = $seriesVariant['series_variant_button']['button_link']['title'];
+                            $button_title = $seriesVariant['series_variant_title'];
                             $button_url = $seriesVariant['series_variant_button']['button_link']['url'];
 
-                            echo "<a class=\"seriesBlocks-seriesBlock-seriesVariants-seriesVariant-button\" href=\"" . $button_url . "\" title=\"" . $button_title . "\">" . $button_label . "</a>";
+                            echo "<a class=\"seriesBlocks-seriesBlock-seriesVariants-seriesVariant-button\" href=\"" . $button_url . "\" title=\"Read more about " . $button_title . "\">" . $button_label . "</a>";
                         }
 
                         echo "</article>";

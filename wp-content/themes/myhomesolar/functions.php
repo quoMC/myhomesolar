@@ -23,19 +23,6 @@
 	}
 	add_filter( 'generate_sidebar_layout', 'product_post_sidebar_layout' );
 
-	/* function readmore($fullText){
-			if(@strpos($fullText, '<!--more-->')){
-				$morePos  = strpos($fullText, '<!--more-->');
-				$fullText = preg_replace('/<!--(.|\s)*?-->/', '', $fullText);
-				print substr($fullText,0,$morePos);
-				print "<div class=\"read-more-content hide\">". substr($fullText,$morePos,-1) . "</div>";
-				print "<a class=\"ui lined small button read-more\">Read More</a>";
-			} else {
-				print $fullText;
-			}
-		}
-	*/
-
 	function get_primary_taxonomy_term( $post = 0, $taxonomy = 'category' ) {
 		if ( ! $post ) {
 			$post = get_the_ID();

@@ -2,6 +2,18 @@
 
 /** Template Name: Product Page */
 
+add_filter( 'wpseo_replacements', function( $replacements ){
+
+    $heroSection = get_field('hero_section');
+    $heroSectionContent = $heroSection['hero_section_content']['hero_section_content_body'];
+
+    if(!sizeof($replacements) && !empty($heroSectionContent)){
+        $replacements['%%excerpt%%'] = wp_html_excerpt( do_shortcode( $heroSectionContent ), 155 );
+    }
+
+    return $replacements;
+});
+
 get_header();
 
 ?>

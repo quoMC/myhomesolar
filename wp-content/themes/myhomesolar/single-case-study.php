@@ -4,6 +4,18 @@ $moduleBaseUrl = get_stylesheet_directory_uri() . "/modules/case-studies";
 
 /** Template Name: Case Study Page */
 
+add_filter( 'wpseo_replacements', function( $replacements ){
+
+    $overviewIntroContent = get_field('system_overview_intro_content');
+    $overviewIntroContent_content = $overviewIntroContent['content'];
+
+    if(!sizeof($replacements) && !empty($overviewIntroContent_content)){
+        $replacements['%%excerpt%%'] = wp_html_excerpt(do_shortcode($overviewIntroContent_content), 155);
+    }
+
+    return $replacements;
+});
+
 get_header();
 
 ?>
