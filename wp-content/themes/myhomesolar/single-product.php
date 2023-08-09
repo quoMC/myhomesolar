@@ -55,12 +55,12 @@ get_header();
 
     echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
-            . "<a href=\"" . site_url() . "\" title=\"MyHomeSolar - Home\"><i class=\"fa-solid fa-house\"></i></a>"
+            . "<a href=\"" . site_url() . "/\" title=\"MyHomeSolar - Home\"><i class=\"fa-solid fa-house\"></i></a>"
             . " &gt; ";
 
             if( $post_categories ){
                 foreach($post_categories as $post_category){
-                    echo "<a href=\"/" . $post_category->slug . "\" title=\"" . $post_category->name . "\">"
+                    echo "<a href=\"/" . $post_category->slug . "/\" title=\"" . $post_category->name . "\">"
                         . $post_category->name
                     . "</a>"
                     . " &gt; ";
@@ -97,7 +97,7 @@ get_header();
         </picture>
         <section>
             <div class="heroSectionContent">
-                <a class="heroSectionContent-toggle" href="#"></a>
+                <a class="heroSectionContent-toggle" href="#" title="Read More"></a>
                 <h2 itemprop="name"><?php echo $heroSectionContent_heading ?></h2>
                 <div class="heroSectionContent-body">
                     <?php echo $heroSectionContent_body ?>

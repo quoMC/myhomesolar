@@ -23,7 +23,7 @@
         foreach ($componentBlocks as $componentBlockId => $componentBlock) {
 
             echo "<article class=\"systemOverview-components-componentBlock\">"
-                    . "<header><img src=\"" . $moduleBaseUrl . "\/assets\/" . $componentBlock['component_type']['value'] . "-icon.png\" alt=\"" . $componentBlock['component_type']['label'] . "\" /></header>"
+                    . "<header><img src=\"" . $moduleBaseUrl . "/assets/" . $componentBlock['component_type']['value'] . "-icon.png\" alt=\"" . $componentBlock['component_type']['label'] . "\" /></header>"
                     . "<main>"
                         . "<h5>" . $componentBlock['component_title'] . "</h5>"
                         . "<p>" . $componentBlock['component_detail'] . "</p>"

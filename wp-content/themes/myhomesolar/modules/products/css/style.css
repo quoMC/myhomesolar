@@ -149,6 +149,11 @@ main {
             flex: 50%;
   }
 }
+@media only screen and (max-width: 768px) {
+  .heroSection picture img {
+    min-height: 270px;
+  }
+}
 .heroSection .heroSectionContent {
   display: grid;
   padding-top: 20px;

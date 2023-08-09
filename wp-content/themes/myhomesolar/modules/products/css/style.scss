@@ -56,6 +56,13 @@ main {
             flex: 50%;
         }
     }
+    picture {
+        img {
+            @media only screen and (max-width:768px){
+                min-height: 270px;
+            }
+        }
+    }
     .heroSectionContent {
         display: grid;
         padding-top: 20px;

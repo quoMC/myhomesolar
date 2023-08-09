@@ -34,13 +34,22 @@ get_header();
     echo "<section class=\"moduleBreadcrumbs\">"
         . "<div>"
             . "<a href=\"" . site_url() . "\" title=\"MyHomeSolar - Home\"><i class=\"fa-solid fa-house\"></i></a>"
+            . " &gt; "
+            . "<a href=\"" . site_url() . "/previous-installation\" title=\"MyHomeSolar - Previous Installations\">Previous Installations</a>"
             . " &gt; ";
 
-            if( $post_categories ){
+            /* if( $post_categories ){
                 foreach($post_categories as $post_category){
                     echo "<a href=\"/" . $post_category->slug . "\" title=\"" . $post_category->name . "\">"
                         . $post_category->name
                     . "</a>"
+                    . " &gt; ";
+                }
+            } */
+
+            if( $post_categories ){
+                foreach($post_categories as $post_category){
+                    echo $post_category->name
                     . " &gt; ";
                 }
             }

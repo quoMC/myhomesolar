@@ -61,7 +61,7 @@ get_header();
                     $aCatSlugs[] = $post_category->slug;
 
                     $lastCat;
-                    $catLink = site_url() . "/" . $post_category->slug;
+                    $catLink = site_url() . "/" . $post_category->slug . "/";
                     $onClick;
 
                     if( $post_category === end( $post_categories ) ) {
