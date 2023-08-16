@@ -79,6 +79,28 @@ a.noLink:hover {
 	}
 }
 
+/** Remove slick arrows from custom slider */
+
+.postSlider-prev:before,
+.postSlider-next:before {
+    content: "";
+    display: none;
+}
+
+.slick-track {
+    display: flex!important;
+    align-items: stretch;
+}
+
+.slick-initialized .slick-slide {
+    display: flex!important;
+    height: auto!important;
+    align-items: stretch;
+}
+
+.slick-initialized .slick-slide > div {
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+}
 
 /** Header */
 
