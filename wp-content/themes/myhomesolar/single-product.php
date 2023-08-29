@@ -158,6 +158,14 @@ get_header();
 
     }
 
+    /** Product Video Section */
+
+    if(get_field('video_title')) {
+
+        include get_stylesheet_directory() . "/modules/products/templates/video-section-block.tpl";
+
+    }
+
     /** Product Downloads Section */
 
     if(get_field('download_block')){

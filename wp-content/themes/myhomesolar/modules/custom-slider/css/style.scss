@@ -6,14 +6,14 @@ $brand-primary: #94C11F;
     background: {
         color: #F1F1F1;
         //image: url('../assets/grey-bg-symbol.png');
-        image: url('https://www.myhomesolar.uk/wp-content/uploads/2023/08/grey-bg-symbol.png');
-        position: center bottom;
-        repeat: no-repeat;
-        size: 550px;
+        //image: url('https://www.myhomesolar.uk/wp-content/uploads/2023/08/grey-bg-symbol.png');
+        //position: center bottom;
+        //repeat: no-repeat;
+        //size: 550px;
     }
     @media only screen and (min-width:680px){
         height: 600px;
-        background-position: left -105px bottom -50px;
+        //background-position: left -105px bottom -50px;
     }
     .slick {
         &-list,

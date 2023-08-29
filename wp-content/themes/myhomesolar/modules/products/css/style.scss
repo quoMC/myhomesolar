@@ -1,10 +1,15 @@
 
 @import "../../css/common-styles";
 
+h1 {
+    white-space: break-spaces;
+}
+
 main,
 .contentBlocks,
 .downloadBlocks,
-.galleryBlocks {
+.galleryBlocks,
+.videoBlock {
     width: 100%;
     @media only screen and (min-width:1600px){
         max-width: 1600px;
@@ -644,6 +649,67 @@ main {
             }
             img {
                 display: block;
+            }
+        }
+    }
+}
+
+/** Video Section */
+
+.videoBlock {
+    display: flex;
+    flex-wrap: wrap;
+    & > div {
+        flex: 100%;
+        @media only screen and (min-width:1024px){
+            flex: 1 0 50%;
+        }
+    }
+    &-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        order: 1;
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        @media only screen and (min-width:1024px){
+            padding: 3rem;
+        }
+    }
+    &-video {
+        width: 100%;
+        position: relative;
+        padding-top: 75vw;
+        overflow: hidden;
+        order: 2;
+        @media only screen and (min-width:768px){
+            padding-top: 50vw;
+        }
+        @media only screen and (min-width:1024px){
+            padding-top: 25vw;
+        }
+        &--beforeContent {
+            @media only screen and (min-width:1024px){
+                order: 0;
+            }
+        }
+        & iframe,
+        & video {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            @media only screen and (min-width:768px){
+                width: calc(100% - 3rem);
             }
         }
     }

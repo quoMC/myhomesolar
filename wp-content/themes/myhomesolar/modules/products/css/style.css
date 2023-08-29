@@ -81,17 +81,23 @@
   text-decoration: none;
 }
 
+h1 {
+  white-space: break-spaces;
+}
+
 main,
 .contentBlocks,
 .downloadBlocks,
-.galleryBlocks {
+.galleryBlocks,
+.videoBlock {
   width: 100%;
 }
 @media only screen and (min-width: 1600px) {
   main,
   .contentBlocks,
   .downloadBlocks,
-  .galleryBlocks {
+  .galleryBlocks,
+  .videoBlock {
     max-width: 1600px;
     margin: auto;
   }
@@ -819,6 +825,95 @@ main {
 }
 .galleryBlocks .productGallery-galleryItem img {
   display: block;
+}
+
+/** Video Section */
+.videoBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.videoBlock > div {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .videoBlock > div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+  }
+}
+.videoBlock-content {
+  padding: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.videoBlock-content p:last-of-type {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .videoBlock-content {
+    padding: 3rem;
+  }
+}
+.videoBlock-video {
+  width: 100%;
+  position: relative;
+  padding-top: 75vw;
+  overflow: hidden;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+@media only screen and (min-width: 768px) {
+  .videoBlock-video {
+    padding-top: 50vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .videoBlock-video {
+    padding-top: 25vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .videoBlock-video--beforeContent {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+}
+.videoBlock-video iframe, .videoBlock-video video {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@media only screen and (min-width: 768px) {
+  .videoBlock-video iframe, .videoBlock-video video {
+    width: calc(100% - 3rem);
+  }
 }
 
 /** FAQs Section */
