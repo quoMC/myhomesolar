@@ -98,7 +98,7 @@ a.noLink:hover {
     align-items: stretch;
 }
 
-.slick-initialized .slick-slide > div {
+.caseStudySlider.slick-initialized .slick-slide > div {
     box-shadow: 0 0 5px rgba(0,0,0,.25);
 }
 
